@@ -47,12 +47,11 @@ g++ main.cpp -o sms
 1. Add Student
 2. Display Students
 3. Search Student By Roll Number
-4. Update Student
-5. Delete Student
-6. Display Topper
-7. Search Student By Name
-8. Total Students
-9. Exit
+4. Search Student By Name
+5. Update Student
+6. Delete Student
+7. Display Topper
+8. Exit
 
 ## Author
 
