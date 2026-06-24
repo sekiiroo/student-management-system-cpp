@@ -10,21 +10,20 @@ struct student {
 
 float inputCGPA() {
     float cgpa;
-    do {
+    while (true) {
         cout << "CGPA (0-10) : ";
-        cin >> cgpa;
+        if (!(cin >> cgpa)) {
+            cout << "Invalid Input! Enter a number.\n";
+            cin.clear();
+            cin.ignore(1000, '\n');
+            continue;
+        }
         if (cgpa < 0 || cgpa > 10) {
             cout << "Invalid CGPA! Enter between 0 and 10.\n";
+            continue;
         }
-    } while (cgpa < 0 || cgpa > 10);
-    return cgpa;
-}
-
-void printStudent(const student &s) {
-    cout << "\nName : " << s.name;
-    cout << "\nRoll Number : " << s.roll;
-    cout << "\nBranch : " << s.branch;
-    cout << "\nCGPA : " << s.cgpa;
+        return cgpa;
+    }
 }
 
 void add(student s[], int &n) {
@@ -201,7 +200,7 @@ int main() {
     cout << "     STUDENT MANAGEMENT SYSTEM\n";
     cout << "========================================\n";
     while (true) {
-        cout << "\nTotal Students In Database : \n" << n;
+        cout << "\nTotal Students In Database : " << n << "\n";
         cout << "\n1. Add Student";
         cout << "\n2. Display Students";
         cout << "\n3. Search Student By Roll Number";
